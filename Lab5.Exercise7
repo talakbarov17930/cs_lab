@@ -1,1 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char text[1000], reversed[1000];
+    int len;
+
+    printf("Enter text: ");
+    gets(text);
+
+    len = strlen(text);
+    for (int i = 0; i < len; i++) {
+        reversed[i] = text[len - i - 1];
+    }
+    reversed[len] = '\0';
+
+    printf("Reversed text: %s\n", reversed);
+    return 0;
+}
 
