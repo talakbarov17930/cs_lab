@@ -1,1 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char text[1000];
+    int len, isPalindrome = 1;
+
+    printf("Enter text: ");
+    gets(text);
+
+    len = strlen(text);
+    for (int i = 0; i < len / 2; i++) {
+        if (text[i] != text[len - i - 1]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+
+    if (isPalindrome) {
+        printf("YES\n");
+    } else {
+        printf("NO\n");
+    }
+    return 0;
+}
 
