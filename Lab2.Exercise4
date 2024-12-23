@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    double num, sum = 0.0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        scanf("%lf", &num);
+        sum += num;
+    }
+
+    printf("Sum: %.1lf\n", sum);
+    return 0;
+}
