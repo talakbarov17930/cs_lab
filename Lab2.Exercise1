@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    int sum = 0, product = 1;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        int xi = 3 * i - 1;
+        sum += xi;
+        product *= xi;
+    }
+
+    printf("Sum: %d\n", sum);
+    printf("Product: %d\n", product);
+    return 0;
+}
