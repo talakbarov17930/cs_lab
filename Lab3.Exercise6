@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n, height, tallest = 0, shortest = 100000, tallPos = 0, shortPos = 0;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+
+    for (int i = 1; i <= n; i++) {
+        scanf("%d", &height);
+        if (height > tallest) {
+            tallest = height;
+            tallPos = i;
+        }
+        if (height < shortest) {
+            shortest = height;
+            shortPos = i;
+        }
+    }
+
+    printf("Shortest: %d %d\n", shortest, shortPos);
+    printf("Tallest: %d %d\n", tallest, tallPos);
+    return 0;
+}
