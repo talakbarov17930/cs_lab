@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int num, result = 0, multiplier = 1;
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    while (num != 0) {
+        int digit = num % 10;
+        if (digit != 0) {
+            result += digit * multiplier;
+            multiplier *= 10;
+        }
+        num /= 10;
+    }
+
+    printf("Result: %d\n", result);
+    return 0;
+}
