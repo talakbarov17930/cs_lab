@@ -1,1 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n, m, scalar;
+    printf("Enter rows and columns of matrix: ");
+    scanf("%d %d", &n, &m);
+
+    int matrix[n][m];
+    printf("Enter the matrix elements:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    printf("Enter scalar value: ");
+    scanf("%d", &scalar);
+
+    printf("Resulting matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            printf("%d ", matrix[i][j] * scalar);
+        }
+        printf("\n");
+    }
+    return 0;
+}
 
