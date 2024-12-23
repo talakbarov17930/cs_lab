@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int coord1, step1, coord2, step2;
+    printf("Enter runner1Coord, runner1Step, runner2Coord, runner2Step: ");
+    scanf("%d %d %d %d", &coord1, &step1, &coord2, &step2);
+
+    if (step1 == step2 && coord1 != coord2) {
+        printf("NEVER\n");
+    } else if ((step1 > step2 && coord1 > coord2) || (step1 < step2 && coord1 < coord2)) {
+        printf("NEVER\n");
+    } else {
+        int time = 0;
+        while (coord1 != coord2) {
+            coord1 += step1;
+            coord2 += step2;
+            time++;
+        }
+        printf("%d %d\n", coord1, time);
+    }
+    return 0;
+}
