@@ -1,1 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n, found = 0;
+    printf("Enter the number of names: ");
+    scanf("%d", &n);
+
+    char names[n][51], target[51];
+    printf("Enter the names:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%s", names[i]);
+    }
+
+    printf("Enter the target substring: ");
+    scanf("%s", target);
+
+    for (int i = 0; i < n; i++) {
+        if (strstr(names[i], target) != NULL) {
+            printf("%s %d\n", names[i], i);
+            found = 1;
+        }
+    }
+
+    if (!found) {
+        printf("-1\n");
+    }
+    return 0;
+}
 
