@@ -1,1 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int n, index = -1;
+    printf("Enter the number of names: ");
+    scanf("%d", &n);
+
+    char names[n][51], target[51];
+    printf("Enter the names:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%s", names[i]);
+    }
+
+    printf("Enter the target name: ");
+    scanf("%s", target);
+
+    for (int i = 0; i < n; i++) {
+        if (strcmp(names[i], target) == 0) {
+            index = i;
+            break;
+        }
+    }
+
+    printf("Index of target: %d\n", index);
+    return 0;
+}
 
