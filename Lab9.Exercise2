@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    int id;
+    char name[50];
+    double salary;
+} Employee;
+
+void printEmployee(Employee *emp) {
+    printf("ID: %d, Name: %s, Salary: %.2lf\n", emp->id, emp->name, emp->salary);
+}
+
+void printEmployees(Employee *emps, int length) {
+    for (int i = 0; i < length; i++) {
+        printEmployee(&emps[i]);
+    }
+}
+
+int getEmployeesWithSalaryMoreThan(Employee *emps, int length, double threshold, Employee *result) {
+    int count = 0;
+    for (int i = 0; i < length; i++) {
+        if (emps[i].salary > threshold) {
+            result[count++] = emps[i];
+        }
+    }
+    return count;
+}
+
+int main() {
+    int n;
+    printf("Enter the number of employees: ");
+    scanf("%d", &n);
+
+    Employee employees[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter ID, Name, and Salary of employee %d:\n", i + 1);
+        scanf("%d", &employees[i].id);
+        scanf(" %[^\n]", employees[i].name);
+        scanf("%lf", &employees[i].salary);
+    }
+
+    printf("\nEmployees Information:\n");
+    printEmployees(employees, n);
+
+    double threshold;
+    printf("\nEnter salary threshold: ");
+    scanf("%lf", &threshold);
+
+    Employee result[n];
+    int count = getEmployeesWithSalaryMoreThan(employees, n, threshold, result);
+
+    printf("\nEmployees with salary more than %.2lf:\n", threshold);
+    printEmployees(result, count);
+
+    return 0;
+}
