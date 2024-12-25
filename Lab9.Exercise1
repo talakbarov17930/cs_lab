@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+    char title[50];
+    char author[50];
+    float price;
+} Book;
+
+void printBook(Book *b) {
+    printf("Title: %s, Author: %s, Price: %.2f\n", b->title, b->author, b->price);
+}
+
+int main() {
+    int n;
+    printf("Enter the number of books: ");
+    scanf("%d", &n);
+
+    Book books[n];
+    for (int i = 0; i < n; i++) {
+        printf("Enter title, author, and price of book %d:\n", i + 1);
+        scanf(" %[^\n]", books[i].title);
+        scanf(" %[^\n]", books[i].author);
+        scanf("%f", &books[i].price);
+    }
+
+    printf("\nBooks Information:\n");
+    for (int i = 0; i < n; i++) {
+        printBook(&books[i]);
+    }
+
+    printf("\nSize of Book structure: %lu bytes\n", sizeof(Book));
+    return 0;
+}
